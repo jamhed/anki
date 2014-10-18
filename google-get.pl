@@ -29,7 +29,6 @@ $response = $browser->post("https://accounts.google.com/ServiceLoginAuth",
         Email => $login,
         Passwd => $pass,
         PersistentCookie => 'yes',
-        bgresponse => 'js_disabled',
         continue => 'https://translate.google.com'
     ]
 );
@@ -39,7 +38,12 @@ my $redirect = $1;
 
 $response = $browser->get($redirect);
 
-$response = $browser->post('https://translate.google.com/translate_a/sg?client=t&cm=g&hl=en&xt=ALkJrhgAAAAAVE19b4LFNsnGxacLFEw6o9-Gs2GxVXYl')->content;
+$browser->agent('Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2049.0 Safari/537.36');
+$response = $browser->get('https://translate.google.com');
+$response->content =~ /USAGE\='(.+?)'/gmsi;
+my $google_key = $1;
+
+$response = $browser->post('https://translate.google.com/translate_a/sg?client=t&cm=g&hl=en&xt=' . $google_key)->content;
 # [137,,[["NZ3y7Uc4quY","en","ru","brook","ручей",1366570265428123]
 $response =~ s/,,/,"",/gms; # json fix?
 my $re = decode_json($response);
