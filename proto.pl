@@ -5,6 +5,8 @@ use HTTP::Cookies;
 use HTTP::Request;
 use IO::Compress::Gzip qw(gzip);
 use JSON qw( encode_json decode_json );
+use File::Temp qw( tempfile );
+use DBI;
 
 # Constants
 sub _base { "https://ankiweb.net" }
@@ -63,9 +65,13 @@ sub io ($) {
     return $v;
 }
 
+sub raw_io ($) {
+    return $browser->request(shift)->content;
+}
+
 $browser = LWP::UserAgent->new;
 $browser->agent('Opera/7.50');
-$browser->cookie_jar( HTTP::Cookies->new( file => 'cookie.jar', autosave => 1 ) );
+$browser->cookie_jar(HTTP::Cookies->new());
 
 my $r = io req "sync/hostKey", vars {}, encode_json({ u => $login, p => $pass });
 my $key = $r->{key};
@@ -76,7 +82,16 @@ my $skey = $r->{data}->{sk};
 # {"mod":1413592669883,"scm":1413492756372,"uname":"ip@ncom-ufa.ru","msg":"","usn":8,"musn":0,"ts":1413627965,"cont":true}
 my $meta = io req "sync/meta", vars { k => $key, s => $skey }, encode_json({ v => 8, cv => 'ankidesktop,2.0.29,lin:debian:jessie/sid' });
 
-my $chunk = io req "sync/download", vars { k => $key, s => $skey }, encode_json({});
-print $chunk;
+my $db = raw_io req "sync/download", vars { k => $key, s => $skey }, encode_json({});
+my ($tmp_fh, $tmp_name) = tempfile(DIR => './');
+print $tmp_fh $db;
+close $tmp_fh;
 
-print encode_json($chunk);
+my $dbh = DBI->connect("dbi:SQLite:dbname=$tmp_name","","");
+my $refs = $dbh->selectall_arrayref("SELECT sfld FROM notes");
+my %words = map { $_->[0] => 1 } @$refs;
+
+
+# Clean-up 
+print $tmp_name, "\n";
+unlink $tmp_fh;
