@@ -6,18 +6,29 @@ Anki flashcard tools. Allows to import Google Translate phrasebook to AnkiWeb ac
 Usage
 =====
 
-./google-get google-login google-password > words
+./google-get.pl google-login google-password > words
 
-Downloads and stores google phrasebook into words file (which is simple json array of arrays).
+Retrieves and reformats as JSON list of lists Google phrasebook.
 
-./anki-put anki-login anki-password words
+./anki-put.pl anki-login anki-password words
 
-Reads words file and uploads it to AnkiWeb.
+Reads words file as dumped from google-get.pl and uploads it to AnkiWeb. May and will cause doubles if run with same words more than once.
+
+./anki-db.pl anki-login anki-password anki-db
+
+Dumps AnkiWeb database in SQLite3 format. You can use standard sqlite3 tool to access it manually.
+
+./anki-sync.pl anki-login anki-password google-login google-password
+
+Syncs Google Translate phrasebook with AnkiWeb account.
 
 Notes
 =====
 
-Currently this script doesn't check that word definition is already exists, so it may and will cause word duplicates. I've started implementing Anki sync protocol in proto.pl file, but this is not done yet.
+I use Anki REST API to retrieve sqlite database to get word list from it, then I use AnkiWeb API to add cards to decks because I don't
+want to recreate anki database management layer (it is a bit complicated and not well documented), and the later is a bit slow.
+
+If only AnkiWeb API have methods to retrieve deck list, words in deck and commit more than one card at once it would be much simplier and easier.
 
 References
 ==========

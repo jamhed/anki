@@ -14,7 +14,7 @@ sub auth {
 
 sub get_mid {
     my ($self) = @_;
-    my $r = $self->_get( _base("/edit/") );
+    my $r = $self->_get( _base("edit/") );
     $r->content =~ m/curModelID\s+\=\s+\"(\d+?)\"/;
     $self->{mid} = $1;
     return $self;
@@ -22,7 +22,7 @@ sub get_mid {
 
 sub add_card {
     my ($self, $dict, $word1, $word2) = @_;
-    my $ok = $self->_post( _base("/edit/save"),
+    my $ok = $self->_post( _base("edit/save"),
         [
             data => sprintf('[["%s","%s"],""]', $word1, $word2),
             mid  => $self->{mid},
