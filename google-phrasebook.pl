@@ -2,6 +2,7 @@
 use strict;
 use Google;
 use JSON qw( encode_json );
+use open IO => ':locale';
 
 my ($login, $pass) = @ARGV;
 unless ($pass) {
@@ -9,16 +10,13 @@ unless ($pass) {
     exit;
 }
 
-my $re = Google
+my $g = Google
             ->new( login => $login, pass => $pass )
             ->auth()
-            ->get_key()
-            ->get_pb();
+            ->get_key();
 
-my $fmt = [];
-foreach (@{$re->[2]}) {
-    my ($uid, $from, $to, $word1, $word2, $ts) = @$_;
-    push @$fmt, ["$from-$to", $word1, $word2];
-}
+my $pb = $g->get_pb();
 
-print encode_json($fmt);
+my $fmt = $g->parse_pb($pb);
+
+print JSON->new->pretty(1)->encode($fmt);

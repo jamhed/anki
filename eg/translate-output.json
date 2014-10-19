@@ -1,0 +1,438 @@
+[
+   [
+      [
+         "сходятся",
+         "converge"
+      ],
+      [
+         "",
+         "",
+         "skhodyatsya",
+         "kənˈvərj"
+      ]
+   ],
+   [
+      [
+         "verb",
+         [
+            "сходиться",
+            "сходиться в одной точке",
+            "приближаться",
+            "сводить в одну точку"
+         ],
+         [
+            [
+               "сходиться",
+               [
+                  "converge",
+                  "come together",
+                  "meet together",
+                  "meet",
+                  "foregather",
+                  "forgather"
+               ],
+               "",
+               0.083377652
+            ],
+            [
+               "сходиться в одной точке",
+               [
+                  "converge"
+               ]
+            ],
+            [
+               "приближаться",
+               [
+                  "approach",
+                  "approximate",
+                  "come near",
+                  "nigh",
+                  "come on",
+                  "converge"
+               ]
+            ],
+            [
+               "сводить в одну точку",
+               [
+                  "converge"
+               ]
+            ]
+         ],
+         "converge",
+         2
+      ]
+   ],
+   "en",
+   "",
+   [
+      [
+         "сходятся",
+         [
+            1
+         ],
+         true,
+         false,
+         1000,
+         0,
+         1,
+         0
+      ]
+   ],
+   [
+      [
+         "converge",
+         1,
+         [
+            [
+               "сходятся",
+               1000,
+               true,
+               false
+            ],
+            [
+               "сходится",
+               0,
+               true,
+               false
+            ],
+            [
+               "сходиться",
+               0,
+               true,
+               false
+            ],
+            [
+               "сходимость",
+               0,
+               true,
+               false
+            ],
+            [
+               "сходимости",
+               0,
+               true,
+               false
+            ]
+         ],
+         [
+            [
+               0,
+               8
+            ]
+         ],
+         "converge"
+      ]
+   ],
+   "",
+   "",
+   [
+      [
+         "en"
+      ],
+      "",
+      [
+         0.66101694
+      ]
+   ],
+   "",
+   "",
+   [
+      [
+         "verb",
+         [
+            [
+               [
+                  "meet",
+                  "intersect",
+                  "cross",
+                  "connect",
+                  "link up",
+                  "coincide",
+                  "join",
+                  "unite",
+                  "merge"
+               ],
+               "m_en_us1235777.004"
+            ],
+            [
+               [
+                  "close in on",
+                  "bear down on",
+                  "approach",
+                  "move toward"
+               ],
+               "m_en_us1235777.001"
+            ],
+            [
+               [
+                  "meet"
+               ],
+               ""
+            ]
+         ],
+         "converge"
+      ]
+   ],
+   [
+      [
+         "verb",
+         [
+            [
+               "(of several people or things) come together from different directions so as eventually to meet.",
+               "m_en_us1235777.001",
+               "convoys from America and the UK traversed thousands of miles to converge in the Atlantic"
+            ]
+         ],
+         "converge"
+      ]
+   ],
+   [
+      [
+         [
+            "half a million sports fans will <b>converge</b> on the capital for the London Marathon",
+            "",
+            "",
+            "",
+            3,
+            "m_en_gb0176670.003"
+         ],
+         [
+            "The medium, whether air or water, flows smoothly over top and bottom, and the flow lines <b>converge</b> toward their initial spacing and position.",
+            "",
+            "",
+            "",
+            3,
+            "m_en_us1235777.004"
+         ],
+         [
+            "This is another of those interesting regions in which two very different developmental domains <b>converge</b> .",
+            "",
+            "",
+            "",
+            3,
+            "m_en_us1235777.003"
+         ],
+         [
+            "the aims of the two developments can and should <b>converge</b>",
+            "",
+            "",
+            "",
+            3,
+            "m_en_gb0176670.004"
+         ],
+         [
+            "It's where our main subway lines <b>converge</b> , where uptown meets downtown, where east meets west.",
+            "",
+            "",
+            "",
+            3,
+            "m_en_us1235777.004"
+         ],
+         [
+            "And if you tilt your camera to take a picture of a building or a monument, vertical lines will <b>converge</b> and rectangles turn into trapezoids.",
+            "",
+            "",
+            "",
+            3,
+            "m_en_us1235777.004"
+         ],
+         [
+            "Eventually, both stories <b>converge</b> in an action-packed finale straight out of the Hollywood playbook (not to mention patently absurd in so many ways that it boggles the mind).",
+            "",
+            "",
+            "",
+            3,
+            "m_en_us1235777.003"
+         ],
+         [
+            "Longitude lines <b>converge</b> ; latitude lines don't.",
+            "",
+            "",
+            "",
+            3,
+            "m_en_us1235777.004"
+         ],
+         [
+            "It's only over the past few months that the original and revised payroll counts have started to <b>converge</b> .",
+            "",
+            "",
+            "",
+            3,
+            "m_en_us1235777.003"
+         ],
+         [
+            "Thus the interests of order-givers of different social classes often <b>converge</b> , forming a virtual class culture that has similar attitudes.",
+            "",
+            "",
+            "",
+            3,
+            "m_en_us1235777.003"
+         ],
+         [
+            "The city is made of people who <b>converge</b> , coming from different parts of the State.",
+            "",
+            "",
+            "",
+            3,
+            "m_en_us1235777.001"
+         ],
+         [
+            "He also understood that horizontal lines appear to <b>converge</b> with distance (slope toward one another) in the direction of an eye-level.",
+            "",
+            "",
+            "",
+            3,
+            "m_en_us1235777.004"
+         ],
+         [
+            "These different beats <b>converge</b> into one time, one becoming.",
+            "",
+            "",
+            "",
+            3,
+            "m_en_us1235777.003"
+         ],
+         [
+            "In the first place, a large number of people, machines, and materials must <b>converge</b> and act together for it to come into existence at all.",
+            "",
+            "",
+            "",
+            3,
+            "m_en_us1235777.001"
+         ],
+         [
+            "On the one hand, I address what it means for law and popular culture to <b>converge</b> .",
+            "",
+            "",
+            "",
+            3,
+            "m_en_us1235777.003"
+         ],
+         [
+            "The more often these lines <b>converge</b> at or near a single price level, the more significant and therefore reliable they become in determining potential pause or reversal points.",
+            "",
+            "",
+            "",
+            3,
+            "m_en_us1235777.004"
+         ],
+         [
+            "convoys from America and the UK traversed thousands of miles to <b>converge</b> in the Atlantic",
+            "",
+            "",
+            "",
+            3,
+            "m_en_gb0176670.002"
+         ],
+         [
+            "convoys from America and the UK traversed thousands of miles to <b>converge</b> in the Atlantic",
+            "",
+            "",
+            "",
+            3,
+            "m_en_us1235777.001"
+         ],
+         [
+            "The three lines <b>converge</b> in a single point, which presumably corresponds to the present moment.",
+            "",
+            "",
+            "",
+            3,
+            "m_en_us1235777.004"
+         ],
+         [
+            "the powers of E therefore <b>converge</b> very slowly indeed",
+            "",
+            "",
+            "",
+            3,
+            "m_en_gb0176670.005"
+         ],
+         [
+            "Based on a novel by Ruth Rendell, this compelling tale is told in neat subsections which gradually <b>converge</b> .",
+            "",
+            "",
+            "",
+            3,
+            "m_en_us1235777.003"
+         ],
+         [
+            "The rostrum is longer than wide; its lateral borders slightly <b>converge</b> anteriorly.",
+            "",
+            "",
+            "",
+            3,
+            "m_en_us1235777.004"
+         ],
+         [
+            "It concludes that there is no single model of institutional arrangements to which the capitalist world must <b>converge</b> , but that different models may be equally suited to successful economic developments.",
+            "",
+            "",
+            "",
+            3,
+            "m_en_us1235777.003"
+         ],
+         [
+            "As the harvesting effort is increased, the two equilibrium points eventually <b>converge</b> to one point, at which there is a catastrophe.",
+            "",
+            "",
+            "",
+            3,
+            "m_en_us1235777.001"
+         ],
+         [
+            "According to the principles of geometric perspective, parallel lines appear to <b>converge</b> at a single point in space, known as the vanishing point, as they recede from the viewer.",
+            "",
+            "",
+            "",
+            3,
+            "m_en_us1235777.004"
+         ],
+         [
+            "Where these lines <b>converge</b> , there is a tunnel that opens up and moves through space and time into other dimensions.",
+            "",
+            "",
+            "",
+            3,
+            "m_en_us1235777.004"
+         ],
+         [
+            "Sometimes Asian performance art and body art <b>converge</b> with developments in the West.",
+            "",
+            "",
+            "",
+            3,
+            "m_en_us1235777.003"
+         ],
+         [
+            "Eventually all plot strands <b>converge</b> in a climax of mayhem and carnage and everything gets ‘sorted’.",
+            "",
+            "",
+            "",
+            3,
+            "m_en_us1235777.001"
+         ],
+         [
+            "Since these series <b>converge</b> very rapidly, they can be used to calculate the digits of [pi] and other numbers.",
+            "",
+            "",
+            "",
+            3,
+            "m_en_us1235777.005"
+         ],
+         [
+            "All the waters will <b>converge</b> in one direction sweeping away all obstacles.",
+            "",
+            "",
+            "",
+            3,
+            "m_en_us1235777.001"
+         ]
+      ]
+   ],
+   [
+      [
+         "converge"
+      ]
+   ]
+]

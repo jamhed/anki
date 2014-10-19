@@ -49,7 +49,7 @@ foreach (@{$re->[2]}) {
     my ($uid, $from, $to, $word1, $word2, $ts) = @$_;
     unless($words{$word1}) {
         print join " ", "sync:", "$from-$to", $word1, $word2, " ... ";
-        print $ankiweb->add_card( "$from-$to", $word1, $word2 );
+        print $ankiweb->add_card( "$from-$to", $word1, $word2 )? "ok" : "fail";
         print "\n";
     }
 }
