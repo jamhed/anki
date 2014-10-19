@@ -6,7 +6,7 @@ Anki is a program which makes remembering things easy. Because it's a lot more e
 This Anki Tool
 ==============
 
-Anki tools. Allows to import Google Translate phrasebook to AnkiWeb account. You need to have a Google account with login/password and Anki Web account with login/password.
+Allows to import Google Translate phrasebook to AnkiWeb account. You need to have a Google account with login/password and Anki Web account with login/password.
 
 Usage
 =====
@@ -38,8 +38,8 @@ If only AnkiWeb API have methods to retrieve deck list, words in deck and commit
 References
 ==========
 
-http://translate.google.com
+https://translate.google.com
 
-http://ankiweb.net
+https://ankiweb.net
 
-http://ankisrs.net
+https://ankisrs.net
