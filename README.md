@@ -1,7 +1,12 @@
-Anki-Tools
+About Anki
 ==========
 
-Anki flashcard tools. Allows to import Google Translate phrasebook to AnkiWeb account. You need to have a Google account with login/password and Anki Web account with login/password.
+Anki is a program which makes remembering things easy. Because it's a lot more efficient than traditional study methods, you can either greatly decrease your time spent studying, or greatly increase the amount you learn.
+
+This Anki Tool
+==============
+
+Anki tools. Allows to import Google Translate phrasebook to AnkiWeb account. You need to have a Google account with login/password and Anki Web account with login/password.
 
 Usage
 =====
@@ -36,3 +41,5 @@ References
 http://translate.google.com
 
 http://ankiweb.net
+
+http://ankisrs.net
