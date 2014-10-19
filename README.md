@@ -30,8 +30,8 @@ Syncs Google Translate phrasebook with AnkiWeb account.
 Notes
 =====
 
-I use Anki REST API to retrieve sqlite database to get word list from it, then I use AnkiWeb API to add cards to decks because I don't
-want to recreate anki database management layer (it is a bit complicated and not well documented), and the later is a bit slow.
+I use Anki REST API to retrieve sqlite database to get word list from it, then I use AnkiWeb API (slow) to add cards to decks because I don't
+want to recreate anki database management layer (it is complicated and not well documented).
 
 If only AnkiWeb API have methods to retrieve deck list, words in deck and commit more than one card at once it would be much simplier and easier.
 
