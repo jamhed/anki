@@ -1,1 +1,0 @@
-wget  -U "Opera/7.50" -q -O - "https://translate.google.com/translate_a/t?client=t&text=grace&sl=en&tl=es"

@@ -2,16 +2,14 @@
 use strict;
 use Google;
 use JSON qw( encode_json );
+use Cfg;
 use open IO => ':locale';
 
-my ($login, $pass) = @ARGV;
-unless ($pass) {
-    print "Usage: $0 login password\n";
-    exit;
-}
+my $cfg = Cfg->std;
+
 
 my $g = Google
-            ->new( login => $login, pass => $pass )
+            ->new( login => $cfg->{google}{login}, pass => $cfg->{google}{password} )
             ->auth()
             ->get_key();
 

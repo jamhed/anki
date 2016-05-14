@@ -2,10 +2,13 @@
 use strict;
 use AnkiWeb;
 use JSON qw( encode_json decode_json );
+use Cfg;
 
-my ($login, $pass, $file) = @ARGV;
+my $cfg = Cfg->std;
+
+my ($model, $file) = @ARGV;
 unless ($file) {
-    print "Usage: $0 login password file\n";
+    print "Usage: $0 model file\n";
     exit;
 }
 
@@ -17,9 +20,9 @@ my $words = decode_json($data);
 
 
 my $anki = AnkiWeb
-                ->new( login => $login, pass => $pass )
+                ->new( login => $cfg->{anki}{login}, pass => $cfg->{anki}{password} )
                 ->auth()
-                ->get_mid();
+                ->set_model($model);
 
 my $id = 0;
 my $total = scalar(@$words);

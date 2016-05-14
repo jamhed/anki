@@ -15,6 +15,7 @@ sub new {
 sub set_browser {
     my ($self) = @_;
     $self->{browser} = LWP::UserAgent->new;
+    # $self->{browser}->proxy([qw(http https)] => 'socks://127.0.0.1:1080');
     $self->{browser}->agent('Opera/7.50');
     $self->{browser}->cookie_jar( HTTP::Cookies->new() );
     return $self->{browser};
