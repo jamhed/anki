@@ -8,7 +8,6 @@ About this Repo
 
 These tools allow to use Google Translate service in command-line to translate words, and to retrieve Google Translate phrase books as a JSON list.
 
-
 Notes
 =====
 
@@ -22,7 +21,21 @@ Dependencies
 
 Perl and some modules (assume you have cpanm installed):
 ```sh
-cpanm JSON DBI DBD::SQLite LWP::UserAgent
+cpanm JSON DBI DBD::SQLite LWP::UserAgent LWP::Protocol::https
+```
+
+Docker
+======
+
+Build docker image (provide credentials):
+```sh
+GOOGLE_LOGIN=... GOOGLE_PASSWORD=... ANKI_LOGIN=... ANKI_PASSWORD=... ./build.sh
+```
+
+Use docker image:
+```sh
+docker run -it jamhed/anki bin/translate.pl en ru test
+docker run -it jamhed/anki bin/google-phrasebook.pl
 ```
 
 Usage
@@ -81,7 +94,6 @@ Retrieve phrase book, translate each word and put it to AnkiWeb:
 ```sh
 bin/anki-sync.pl Basic en-ru
 ```
-
 
 References
 ==========

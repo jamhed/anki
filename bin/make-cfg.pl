@@ -3,10 +3,6 @@ use JSON;
 use strict;
 
 my ($gn, $gp, $an, $ap) = @ARGV;
-unless ($ap) {
-    print "Usage: $0 google_login google_password anki_login anki_password\n";
-    exit 1;
-}
 
 my $cfg = {
     google => {
