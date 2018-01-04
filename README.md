@@ -22,7 +22,7 @@ Dependencies
 
 Perl and some modules (assume you have cpanm installed):
 ```sh
-cpanm JSON DBI DBD::SQLite
+cpanm JSON DBI DBD::SQLite LWP::UserAgent
 ```
 
 Usage
