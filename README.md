@@ -17,6 +17,14 @@ In order to access Google translate phrase book you need to authenticate though.
 
 Note that ankiweb.net bans ip addresses with too many (3 or 4 in an hour) authentication requests, for the reason unknown.
 
+Dependencies
+============
+
+Perl and some modules (assume you have cpanm installed):
+```sh
+cpanm JSON DBI DBD::SQLite
+```
+
 Usage
 =====
 
