@@ -18,7 +18,6 @@ read($f, $data, 512*1024);
 close $f;
 my $words = decode_json($data);
 
-
 my $anki = AnkiWeb
                 ->new( login => $cfg->{anki}{login}, pass => $cfg->{anki}{password} )
                 ->auth()

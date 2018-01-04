@@ -1,16 +1,18 @@
 #!/usr/bin/perl -w
 use strict;
-
 use AnkiREST;
+use Cfg;
 
-my ($login, $pass, $dbfile) = @ARGV;
+my $cfg = Cfg->std;
+
+my ($dbfile) = @ARGV;
 unless ($dbfile) {
-    print "Usage: $0 login password dbfile\n";
+    print "Usage: $0 dbfile\n";
     exit;
 }
 
 my $anki = AnkiREST
-                ->new(login => $login, pass => $pass)
+                ->new( login => $cfg->{anki}{login}, pass => $cfg->{anki}{password} )
                 ->get_hk()
                 ->get_sk();
 
