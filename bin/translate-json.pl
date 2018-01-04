@@ -1,8 +1,8 @@
 #!/usr/bin/perl -w
 use strict;
+use Cfg;
 use Google;
 use JSON;
-use open IO => ':locale';
 
 my ($from, $to, $word) = @ARGV;
 unless ($word) {
@@ -10,8 +10,9 @@ unless ($word) {
     exit;
 }
 
-my $g = Google->new();
+my $cfg = Cfg->std;
 
-my $tr = $g->get_tr($from, $to, $word);
+my $g = Google->new->get_tkk;
 
-print JSON->new->pretty(1)->encode($tr);
+my $tr = $g->get($from, $to, $word);
+print $tr, "\n";

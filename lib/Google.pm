@@ -1,6 +1,7 @@
 package Google;
 use strict;
 use parent 'Browser';
+use Token;
 use JSON qw( decode_json encode_json );
 use Encode qw( decode_utf8 encode_utf8 );
 
@@ -59,10 +60,35 @@ sub get_pb {
     return decode_json($r);
 }
 
+# get TKK
+sub get_tkk {
+    my ($self) = @_;
+    my $r = $self->_get("https://translate.google.com");
+    $r->content =~ /TKK=(.+?)\);/gmsi;
+    $self->{TKK} = $self->eval_tkk($1);
+    return $self;
+}
+
+sub eval_tkk {
+    my ($self, $ev) = @_;
+    $ev =~ s/\\x(..)/${\(cvt($1))}/g;
+    my ($a, $b, $k) = ($ev =~ /a=(\d+).*b=(-?\d+).*return\s+(\d+)/);
+    return sprintf("%d.%d", $k, $a+$b);
+}
+
+sub cvt {
+    return chr(hex(shift));
+}
+
 # translation as json blob
 sub get {
     my ($self, $from, $to, $word) = @_;
-    my $r = $self->_post("https://translate.google.com/translate_a/single?client=t&sl=$from&tl=$to&hl=en&dt=bd&dt=ex&dt=ld&dt=md&dt=qc&dt=rw&dt=rm&dt=ss&dt=t&dt=at&dt=sw&ie=UTF-8&oe=UTF-8&prev=bh&ssel=0&tsel=0&q=$word")->content;
+    my $tk = Token::calcHash($word, $self->{TKK});
+    my $r = $self->_get(
+        "https://translate.google.com/translate_a/single?client=t&sl=$from&tl=$to&hl=en&dt=at&dt=bd&dt=ex&dt=ld&dt=md&dt=qca&dt=rw&dt=rm&dt=ss&dt=t&ie=UTF-8&oe=UTF-8&otf=1&ssel=3&tsel=0&kc=2&tk=$tk&q=$word",
+        'Referer' => 'https://translate.google.com',
+        'User-Agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2049.0 Safari/537.36'
+        )->content;
 }
 
 sub decode {

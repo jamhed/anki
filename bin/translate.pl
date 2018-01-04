@@ -11,16 +11,13 @@ unless ($word) {
     exit;
 }
 
-my $g = Google->new();
+my $g = Google->new()->get_tkk();
 my $raw;
 
 eval {
     $raw = $g->get($from, $to, $word);
-
     my $tr = $g->decode($raw);
-
     print JSON->new->pretty(1)->encode( $g->parts( $tr ) );
-
 };
 if ($@) {
     print $@, "\n";

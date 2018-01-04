@@ -7,7 +7,6 @@ use open IO => ':locale';
 
 my $cfg = Cfg->std;
 
-
 my $g = Google
             ->new( login => $cfg->{google}{login}, pass => $cfg->{google}{password} )
             ->auth()
