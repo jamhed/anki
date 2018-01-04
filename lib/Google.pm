@@ -6,13 +6,27 @@ use Encode qw( decode_utf8 encode_utf8 );
 
 sub auth {
     my ($self) = @_;
-    my $r = $self->_get("https://accounts.google.com/ServiceLogin");
-    $r->content =~ m/GALX.*?value=\"(.*?)\"\>/gms ;
-    $self->{galx} = $1;
+    my $r = $self->_get("https://accounts.google.com/AccountChooser");
+    $r->content =~ m/gxf.*?value=\"(.*?)\"\>/gms ;
+    $self->{gxf} = $1;
 
-    $r = $self->_post("https://accounts.google.com/ServiceLoginAuth",
+    $r = $self->_post("https://accounts.google.com/signin/v1/lookup",
         [
-            GALX             => $self->{galx},
+            gxf              => $self->{gxf},
+            Email            => $self->{login},
+            PersistentCookie => 'yes',
+            bgresponse       => 'js_disabled',
+            continue         => 'https://translate.google.com'
+        ]
+    );
+
+    $r->content =~ m/GALX.*?value=\"(.*?)\"\>/gms ;
+    $self->{GALX} = $1;
+
+    $r = $self->_post("https://accounts.google.com/signin/challenge/sl/password",
+        [
+            gxf              => $self->{gxf},
+            GALX             => $self->{GALX},
             Email            => $self->{login},
             Passwd           => $self->{pass},
             PersistentCookie => 'yes',
