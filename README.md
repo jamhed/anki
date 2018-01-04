@@ -98,6 +98,6 @@ bin/anki-sync.pl Basic en-ru
 References
 ==========
 
-# https://translate.google.com
-# https://ankiweb.net
-# https://ankisrs.net
+* https://translate.google.com
+* https://ankiweb.net
+* https://ankisrs.net
