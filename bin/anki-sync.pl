@@ -51,7 +51,7 @@ my $re = Google
             ->get_key()
             ->get_pb();
 
-my $google_tr = Google->new();
+my $google_tr = Google->new()->get_tkk();
 
 sub _v ($) {
     my ($_v) = @_;
